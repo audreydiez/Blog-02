@@ -1,19 +1,19 @@
 import Link from 'next/link';
-import { Helmet } from 'react-helmet';
 
 import Layout from 'components/Layout';
 import Section from 'components/Section';
 import Container from 'components/Container';
-
+import Head from 'next/head';
 import styles from 'styles/pages/Error.module.scss';
 
 export default function Custom500() {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>500 - Internal Error</title>
         <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      </Head>
+
       <Section>
         <Container className={styles.center}>
           <h1>Internal Error</h1>

@@ -1,8 +1,7 @@
-import { Helmet } from 'react-helmet';
-
 import { WebpageJsonLd } from 'lib/json-ld';
-import { helmetSettingsFromMetadata } from 'lib/site';
+
 import useSite from 'hooks/use-site';
+import Head from 'next/head';
 
 import Layout from 'components/Layout';
 import Header from 'components/Header';
@@ -33,11 +32,12 @@ export default function TemplateArchive({
     metadata.twitter.title = metadata.title;
   }
 
-  const helmetSettings = helmetSettingsFromMetadata(metadata);
-
   return (
     <Layout>
-      <Helmet {...helmetSettings} />
+      <Head>
+        <title>Titre de ma page</title>
+        <meta name="description" content="Description de ma page" />
+      </Head>
 
       <WebpageJsonLd title={title} description={metadata.description} siteTitle={siteMetadata.title} slug={slug} />
 

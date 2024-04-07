@@ -1,6 +1,7 @@
 import useSite from 'hooks/use-site';
 import { getPaginatedPosts } from 'lib/posts';
 import { WebsiteJsonLd } from 'lib/json-ld';
+import Head from 'next/head';
 
 import Layout from 'components/Layout';
 import Header from 'components/Header';
@@ -18,7 +19,7 @@ export default function Home({ posts, pagination }) {
   return (
     <Layout>
       <WebsiteJsonLd siteTitle={title} />
-      <Header>
+      {/* <Header>
         <h1
           dangerouslySetInnerHTML={{
             __html: title,
@@ -31,7 +32,11 @@ export default function Home({ posts, pagination }) {
             __html: description,
           }}
         />
-      </Header>
+      </Header> */}
+      <Head>
+        <title>Titre de ma page</title>
+        <meta name="description" content="Description de ma page" />
+      </Head>
 
       <Section>
         <Container>
